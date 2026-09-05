@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <rect width="1280" height="640" fill="#000000"/>
+  <polygon points="0,0 720,0 600,640 0,640" fill="#7c3aed"/>
+  <text x="110" y="300" font-family="Helvetica, Arial, sans-serif" font-size="150" fill="#ffffff">vertex</text>
+  <text x="112" y="420" font-family="Helvetica, Arial, sans-serif" font-size="48" fill="#ffffff">TypeScript</text>
+  <text x="112" y="492" font-family="Helvetica, Arial, sans-serif" font-size="48" fill="#ffffff">bniladridas</text>
+</svg>
