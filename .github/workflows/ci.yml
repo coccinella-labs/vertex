@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+      - name: No bundled OpenRouter key
+        run: |
+          if grep -rE "sk-or-v1-[A-Za-z0-9_-]{8,}" dist/; then
+            echo "OpenRouter key pattern found in dist/. Refusing."
+            exit 1
+          fi
+          echo "Bundle clean: no key pattern in dist/."

@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased bg-ink-50 text-ink-900;
+  }
+  .dark body {
+    @apply bg-ink-950 text-ink-100;
+  }
+}
+
+@layer components {
+  /* Scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(200 200 206) transparent;
+  }
+  .dark .scrollbar-thin {
+    scrollbar-color: rgb(50 50 59) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgb(200 200 206);
+    border-radius: 3px;
+  }
+  .dark .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgb(50 50 59);
+  }
+
+  /* Lime pill button */
+  .pill-lime {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-lime-400 px-5 py-2 text-xs font-bold uppercase tracking-wider text-ink-950 transition-all hover:bg-lime-300 hover:shadow-[0_0_30px_-5px_rgba(163,230,53,0.6)] active:scale-95;
+  }
+  .pill-ghost {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-ink-300 px-5 py-2 text-xs font-bold uppercase tracking-wider text-ink-700 transition-all hover:border-violet-400 hover:text-ink-950 active:scale-95;
+  }
+  .dark .pill-ghost {
+    @apply border-ink-600 text-ink-200 hover:text-white;
+  }
+
+  /* Eyebrow label */
+  .eyebrow {
+    @apply text-[0.65rem] font-bold uppercase tracking-[0.25em] text-violet-600;
+  }
+  .dark .eyebrow {
+    @apply text-violet-400;
+  }
+
+  /* Glass surface */
+  .glass {
+    @apply border border-ink-200 bg-white/60 backdrop-blur-xl;
+  }
+  .dark .glass {
+    @apply border-ink-700 bg-ink-900/60;
+  }
+  .glass-hover {
+    @apply transition-colors hover:border-violet-400;
+  }
+  .dark .glass-hover {
+    @apply hover:border-violet-500/50;
+  }
+
+  .brand-orb {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 35% 28%, #d9c8ff 0%, #9b6fff 28%, #7c3aed 58%, #3b1679 100%);
+    box-shadow:
+      0 0 18px -2px rgba(124, 58, 237, 0.95),
+      inset -3px -4px 6px rgba(20, 8, 52, 0.38);
+  }
+  .brand-orb-avatar {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+
+  .brand-orb::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 6px;
+    height: 5px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.68);
+    filter: blur(1.5px);
+  }
+
+  /* Glowing dome */
+  .dome {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #b89eff 0%, #7c3aed 40%, #3b1679 80%, #0c0c10 100%);
+    box-shadow:
+      0 0 80px -10px rgba(124, 58, 237, 0.6),
+      inset 0 -20px 40px -10px rgba(0, 0, 0, 0.5);
+  }
+  .dome::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 30%;
+    height: 25%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    filter: blur(4px);
+  }
+
+  /* Display heading */
+  .display {
+    @apply font-display uppercase leading-[0.95] tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-glow-violet {
+    text-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+  }
+  .text-glow-lime {
+    text-shadow: 0 0 20px rgba(163, 230, 53, 0.5);
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .dark .bg-grid {
+    background-image:
+      linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+  }
+}
