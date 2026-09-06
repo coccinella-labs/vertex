@@ -2,7 +2,6 @@
   <img src="https://raw.githubusercontent.com/Coccinella-Labs/vertex/main/.github/assets/thumbnail.png" alt="vertex" width="100%">
 </p>
 
-<img src=".github/assets/thumbnail.png" alt="vertex" width="100%">
 
 # vertex
 
